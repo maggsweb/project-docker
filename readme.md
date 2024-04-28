@@ -80,14 +80,8 @@ INSERT INTO Persons VALUES (2, 'Jack', 'Smith', '24 Stuck St.', 'Los Angeles');
 INSERT INTO Persons VALUES (3, 'Michele', 'Sparrow', '23 Lawyer St.', 'San Diego');
 ```
 
-### Backups
 
-Project-Docker-2024-04-21.zip is a basic working example
-
-
-
-
-??
+Try...
 
 docker run -it --network some-network --rm mysql mysql -hsome-mysql -uexample-user -p
 
