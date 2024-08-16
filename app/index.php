@@ -2,19 +2,22 @@
 
 
 $host = "mysql"; // The host is the name of the service, present in the docker-compose.yml
-$dbname = "my-wonderful-website";
-$pass = "super-secret-password";
-$username = 'root';
-
-//$dbname = getenv('MYSQL_DATABASE');
-//$username = getenv('MYSQL_USER');
-//$pass = getenv('MYSQL_ROOT_PASSWORD');
-
-//var_dump($pass);
-//var_dump($dbname);
-
 $charset = "utf8";
 $port = "3306";
+
+$dbname = "testdb";
+$pass = "password";
+$username = 'root';
+
+
+// Set in docker-compose.yaml
+$debug = getenv('DEBUG');   var_dump($debug);
+
+// Set in .env (as well as docker-compose.yaml)
+$env_debug = getenv('ENV_DEBUG'); var_dump($env_debug);
+$env_project = getenv('ENV_PROJECT'); var_dump($env_project);
+
+
 
 try {
     $pdo = new PDO(

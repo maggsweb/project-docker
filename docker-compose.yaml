@@ -6,15 +6,17 @@ services:
     build: './build/php'
     volumes:
       - ./app:/var/www/html
+    environment:
+      DEBUG: true                       # available as: getenv('DEBUG');
+      ENV_DEBUG: ${ENV_DEBUG}           # --- " ---, but value comes from .env file
+      ENV_PROJECT: ${ENV_PROJECT}
   mysql:
     ports:
       - "3306:3306"
     build: './build/mysql'
     environment:
-      MYSQL_ROOT_PASSWORD: "super-secret-password"    # this ENV var is mandatory
-      MYSQL_DATABASE: "my-wonderful-website"
-      # MYSQL_USER
-      # MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: password    # this ENV var is mandatory
+      MYSQL_DATABASE: testdb           # this creates a database (if it doesn't exist)
     volumes:
       - dbData:/var/lib/mysql
 volumes:

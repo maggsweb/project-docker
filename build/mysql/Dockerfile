@@ -1,4 +1,4 @@
-FROM mysql:5.7.4
+FROM mysql:latest
 
 USER root
- RUN chmod 755 /var/lib/mysql
+RUN chmod 755 /var/lib/mysql
